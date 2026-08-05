@@ -33,10 +33,15 @@ Both print `mach mpsc: Pool and Queue generics compiled`.
 
 ## Comparison
 
-| Build | What it does | Config size |
-|-------|--------------|-------------|
-| azazel | imports the mpsc module + a consumer, declared as CUE data on the 0.17 lane | `project.cue`, 14 lines |
-| zaza | imports the mpsc module via the standard Zig build graph | `build.zig`,       29 lines |
+Clean-cache builds with dependencies pre-fetched, Apple Silicon, fastest of two runs.
 
-mach's own `build.zig` hard-pins a single Zig nightly; both builds here compile
-the file directly and stay on the mach toolchain.
+
+| Build | Clean build | Config |
+|-------|-------------|--------|
+| azazel | 3.5 s | `project.cue` — 14 lines · 497 B |
+| zaza | 3.2 s | `build.zig` — 29 lines · 954 B |
+
+The upstream's full build is not reproduced here (see the note below), so no native time is listed.
+
+**mach's own `build.zig` pins a single Zig nightly and rejects others, so its full build is not reproduced here; the mpsc slice builds in ~3 s either way.**
+
