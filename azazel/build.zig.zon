@@ -1,0 +1,7 @@
+.{
+    .name = .azazel_parity_mach,
+    .version = "0.0.0",
+    .fingerprint = 0xcfe79e74edbbaf21,
+    .paths = .{""},
+    .dependencies = .{},
+}

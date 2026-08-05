@@ -1,0 +1,7 @@
+.{
+    .name = .zaza_corpus_mach,
+    .version = "0.0.0",
+    .fingerprint = 0x6e3212ac6567675,
+    .paths = .{ "build.zig", "build.zig.zon", "src" },
+    .dependencies = .{},
+}
